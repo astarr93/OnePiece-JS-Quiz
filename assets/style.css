@@ -1,0 +1,28 @@
+    /* background-color: #1E2019;
+    color: #E2C044; */
+
+    .btn-primary {
+        margin-top: 2em;
+        margin-bottom: 2em;
+        background-color: #587B7F;
+        border-color: #587B7F;
+        color: #D3D0CB;
+    }
+
+    header {
+        background-color: red;
+    }
+
+    header h1 {
+        margin-bottom: 2%;
+    }
+
+    hr {
+        background-color: #D3D0CB;
+    }
+
+    #question-display {
+        padding: 2em;
+        font-size: 32px;
+        font-weight: bold;
+    }
