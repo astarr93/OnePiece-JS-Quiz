@@ -5,7 +5,7 @@ const leaderBoardButton = document.getElementById("leaderboard");
 const questionDisplay = document.getElementById("question-display");
 let questionCounter = 0;
 let questionBank = [];
-const selectionDisplay = document.getElementById("selection-display");
+const choiceDisplay = document.getElementById("choice-display");
 let answerBank = "";
 let answerCheck = "";
 
@@ -38,12 +38,13 @@ const quizBank = [
     correctAnswer: "Gomu-Gomu no Mi",
   },
 ];
+
 let questionDiv = document.getElementsByClassName("question-row");
 // Now I need to break up the quizBank into separate arrays to reference in functions
 
-for (i = 0; i < quizBank.length; i++) {
-  questionBank.push(quizBank[i].question);
-}
+// for (i = 0; i < quizBank.length; i++) {
+//   questionBank.push(quizBank[i].question);
+// }
 
 // onclick Commands for Start Button
 startButton.addEventListener("click", function () {
@@ -56,16 +57,20 @@ startButton.addEventListener("click", function () {
 
 function startQuiz() {
   showQuestions();
-  // showAnswers();
+  showAnswers();
   // startTimer();
   // checkAnswers();
   // showResults();
 }
 
 function showQuestions() {
-  let a = 0;
-  questionDisplay.innerText = questionBank[questionCounter];
+  questionDisplay.innerText = quizBank[questionCounter].question;
   console.log(questionBank);
+}
+
+function showAnswers() {}
+{
+  choiceDisplay.innerText = quizBank[questionCounter].answers;
 }
 
 // Timer Functions are below
