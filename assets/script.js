@@ -1,10 +1,19 @@
-//Global Vars
+// Declaring global variables to reference throughout the quiz
 
-// Question Bank
+const startButton = document.getElementById("start");
+const leaderBoardButton = document.getElementById("leaderboard");
+const questionDisplay = document.getElementById("question-display");
+let questionCounter = 0;
+let questionBank = [];
+const selectionDisplay = document.getElementById("selection-display");
+let answerBank = "";
+let answerCheck = "";
 
-const questions = [
+// Declared array containing all questions with their answers and correct answer.
+
+const quizBank = [
   {
-    question: "Who is the Captain of the Straw Hat Pirates",
+    question: "Who is the Captain of the Straw Hat Pirates?",
     answers: [
       "Monkey D. Luffy",
       "Buggy The Clown",
@@ -19,7 +28,7 @@ const questions = [
     correctAnswer: "30,000",
   },
   {
-    question: "What was the name of the devil fruit that Straw Hat Luffy ate",
+    question: "What was the name of the devil fruit that Straw Hat Luffy ate?",
     answers: [
       "Gomu-Gomu no Mi",
       "Mera Mera no Mi",
@@ -29,39 +38,55 @@ const questions = [
     correctAnswer: "Gomu-Gomu no Mi",
   },
 ];
+let questionDiv = document.getElementsByClassName("question-row");
+// Now I need to break up the quizBank into separate arrays to reference in functions
 
-const startButton = document.getElementById("start-Button");
-const quizSpace = document.getElementById("quiz-Space");
+for (i = 0; i < quizBank.length; i++) {
+  questionBank.push(quizBank[i].question);
+}
 
-// When Start Button is clicked
+// onclick Commands for Start Button
 startButton.addEventListener("click", function () {
-  startDisplay.style.display = "none";
+  startButton.style.visibility = "hidden";
+  leaderBoardButton.style.visibility = "hidden";
   startQuiz();
 });
 
+// These functions make up the logic of the quiz
+
 function startQuiz() {
-  startTimer();
+  showQuestions();
+  // showAnswers();
+  // startTimer();
+  // checkAnswers();
+  // showResults();
 }
 
-// Create Timer
-
-function time() {
-  secondsLeft--;
-  if (secondsLeft <= 0) {
-    secondsLeft = 0;
-  }
-  startTimer();
+function showQuestions() {
+  let a = 0;
+  questionDisplay.innerText = questionBank[questionCounter];
+  console.log(questionBank);
 }
 
-// Start Timer
+// Timer Functions are below
 
-function startTimer() {
-  let timerInterval = setInterval(time, 1000);
-  return timerInterval;
-}
+// function time() {
+//   secondsLeft--;
+//   if (secondsLeft <= 0) {
+//     secondsLeft = 0;
+//   }
+//   startTimer();
+// }
 
-//STOP TIMER FUNCTION
-function stopTimer() {
-  clearInterval(timerReturn);
-  timer.textContent = 0;
-}
+// // Start Timer
+
+// function startTimer() {
+//   let timerInterval = setInterval(time, 1000);
+//   return timerInterval;
+// }
+
+// //STOP TIMER FUNCTION
+// function stopTimer() {
+//   clearInterval(timerReturn);
+//   timer.textContent = 0;
+// }
