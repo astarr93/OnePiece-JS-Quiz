@@ -10,7 +10,7 @@
     }
 
     header {
-        background-color: red;
+        background-color: silver;
     }
 
     header h1 {
@@ -26,4 +26,13 @@
         padding: 2em;
         font-size: 32px;
         font-weight: bold;
+    }
+
+    #radioId {
+        display: inline;
+        margin-right: 2em;
+    }
+
+    .final-countdown {
+        color: red;
     }
