@@ -2,7 +2,7 @@
 
 This is a simple JavaScript quiz on the global sensation and wildly popular graphic novel, One Piece, written by Eiichiro Oda.
 
-Use this link to access the project and take the quiz: https://astarr93.github.io/coding-quiz/
+Use this link to access the project and take the quiz: https://astarr93.github.io/OnePiece-JS-Quiz/
 
 ![image](https://user-images.githubusercontent.com/47404581/85217292-1bebf380-b35d-11ea-91a5-1bc47c6a7265.png)
 
