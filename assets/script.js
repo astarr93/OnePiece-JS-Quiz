@@ -40,7 +40,10 @@ leaderBoardButton.addEventListener("click", function () {
   choiceDisplay.innerText = "";
   if (userInitials != "") {
     questionDisplay.innerText =
-      "The high score belongs to: " + userInitials + "" + highScore;
+      "The high score belongs to: " +
+      userInitials +
+      " with a score of " +
+      highScore;
   } else {
     questionDisplay.innerText =
       "No high score recorded yet. Click Start Quiz and give it your all!";
@@ -50,6 +53,7 @@ leaderBoardButton.addEventListener("click", function () {
 // These functions make up the abstract steps of the quiz
 
 function startQuiz() {
+  questionCounter = 0;
   hideMenu();
   showQuestions();
   startTimer();
@@ -131,6 +135,7 @@ function checkAnswers() {
 function endQuiz() {
   clearInterval(timerInterval);
   title.innerText = "Thanks for playing!";
+  choiceDisplay.innerText = "";
   showMenu();
   highScore = score + secondsLeft;
   questionDisplay.innerHTML =
@@ -138,7 +143,9 @@ function endQuiz() {
     score +
     " out of " +
     quizBank.length +
-    " right for a final score of: " +
+    " right with a remaining time of " +
+    secondsLeft +
+    " for a final score of: " +
     highScore;
   userInitials = prompt("Enter your initials: ");
   localStorage.setItem("Username", userInitials);
